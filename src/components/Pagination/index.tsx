@@ -3,7 +3,7 @@ import { PaginationButton } from "./PaginationButton"
 
 export function Pagination () {
   return (
-    <Stack direction='row' mt='8' justify='space-between' align='center' spacing='6'>
+    <Stack direction={['column', 'row']} mt='8' justify='space-between' align='center' spacing='6'>
       <Box>
         <strong>0</strong> - <strong>10</strong> of <strong>100</strong>
       </Box>
