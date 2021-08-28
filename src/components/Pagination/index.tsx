@@ -31,21 +31,21 @@ export function Pagination ( { currentPage = 1, onChangePage, registerPerPage = 
 
         {currentPage > ( 1 + siblingPages ) && (
           <>
-            <PaginationButton number={1} />
+            <PaginationButton number={1} onChangePage={onChangePage} />
             {currentPage > ( 2 + siblingPages ) && <Text color='gray.300' width='8' textAlign='center'>...</Text>}
           </>
         )}
 
-        {previousPages.length > 0 && previousPages.map( page => { return <PaginationButton key={page} number={page} /> } )}
+        {previousPages.length > 0 && previousPages.map( page => { return <PaginationButton key={page} number={page} onChangePage={onChangePage} /> } )}
 
-        <PaginationButton number={currentPage} isCurrent />
+        <PaginationButton number={currentPage} isCurrent onChangePage={onChangePage} />
 
-        {nextPages.length > 0 && nextPages.map( page => { return <PaginationButton key={page} number={page} /> } )}
+        {nextPages.length > 0 && nextPages.map( page => { return <PaginationButton key={page} number={page} onChangePage={onChangePage} /> } )}
 
         {( currentPage + siblingPages ) < lastPage && (
           <>
             {( currentPage + 1 + siblingPages ) < lastPage && <Text color='gray.300' width='8' textAlign='center' >...</Text>}
-            <PaginationButton number={lastPage} />
+            <PaginationButton number={lastPage} onChangePage={onChangePage} />
           </>
         )}
 
